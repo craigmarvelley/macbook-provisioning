@@ -1,0 +1,50 @@
+---
+- hosts: all
+
+  vars:
+    applications:
+      - alfred
+      - boxer
+      - cord
+      - firefox
+      - google-chrome
+      - gpgtools
+      - handbrake
+      - hipchat
+      - kdiff3
+      - libreoffice
+      - limechat
+      - phpstorm
+      - mou
+      - parallels
+      - robomongo
+      - sequel-pro
+      - sonos
+      - spotify
+      - the-unarchiver
+      - transmit
+      - tunnelblick
+      - vagrant
+      - virtualbox
+      - vlc
+    application_dir: /Applications
+    brews:
+      - ack
+      - chromedriver
+      - docker
+      - hub
+      - ios-webkit-debug-proxy
+      - rsync
+      - zsh
+    caskroom_dir: /usr/local/caskroom
+    dotfiles_dir: /Users/craig/Code/dotfiles
+    email: EMAIL_HERE
+    github_username: craigmarvelley
+    home_dir: /Users/craig
+    name: Craig Marvelley
+    zsh_path: /usr/local/bin/zsh
+
+  tasks:
+    - include: tasks/homebrew.yml tags=homebrew
+    - include: tasks/zsh.yml tags=zsh
+    - include: tasks/dotfiles.yml tags=dotfiles

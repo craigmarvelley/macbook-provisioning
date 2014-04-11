@@ -1,0 +1,5 @@
+[github]
+  user={{ github_username }}
+[user]
+  name = {{ name }}
+  email = {{ email }}

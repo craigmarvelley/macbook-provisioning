@@ -1,0 +1,20 @@
+---
+- name: Check rcm is installed
+  stat: path=/usr/local/bin/rcup
+  register: rcm_installed
+
+- name: Install rcm for dotfiles management
+  shell: brew tap thoughtbot/formulae && brew install rcm
+  when: rcm_installed.stat.exists == false
+
+- name: Check out dotfiles repo
+  git: repo=git@github.com:craigmarvelley/dotfiles.git dest={{ dotfiles_dir }}
+
+- name: Install submodules
+  shell: cd {{ dotfiles_dir }} && git submodule init && git submodule update
+
+- name: Apply dotfiles
+  shell: rcup -f -d {{ dotfiles_dir }}
+
+- name: Apply local git config
+  template: src=templates/gitconfig.local dest={{home_dir}}/.gitconfig.local

@@ -1,0 +1,20 @@
+---
+- name: Determine if zsh is default/current shell
+  shell: echo $SHELL
+  register: current_shell
+
+- name: Enable zsh in /etc/shells
+  shell: sudo /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
+  when: current_shell.stdout != '/usr/local/bin/zsh'
+
+- name: Set zsh as default shell
+  shell: chsh -s {{ zsh_path }}
+  when: current_shell.stdout != '/usr/local/bin/zsh'
+
+- name: Check oh-my-zsh is installed
+  stat: path={{ home_dir}}/.oh-my-zsh
+  register: oh_my_zsh_installed
+
+- name: Install oh-my-zsh
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  when: oh_my_zsh_installed.stat.exists == false
