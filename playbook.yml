@@ -17,6 +17,7 @@
       - coteditor
       - licecap
       - skype
+      - thunderbird
     application_dir: /Applications
     brews:
       - ack
