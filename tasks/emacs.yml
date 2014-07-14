@@ -6,3 +6,7 @@
 - name: Install Emacs
   shell: brew install emacs --cocoa --without-x
   when: emacs_installed.stat.exists == false
+
+- name: Link Emacs
+  shell: ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications
+  when: emacs_installed.stat.exists == false
