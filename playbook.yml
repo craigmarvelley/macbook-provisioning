@@ -8,7 +8,6 @@
       - gpgtools
       - limechat
       - sequel-pro
-      - sonos
       - the-unarchiver
       - tunnelblick
       - vagrant
@@ -18,6 +17,7 @@
       - licecap
       - skype
       - thunderbird
+      - dropbox
     application_dir: /Applications
     brews:
       - ack
