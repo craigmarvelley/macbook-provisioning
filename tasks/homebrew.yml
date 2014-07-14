@@ -19,7 +19,7 @@
   register: brew_cask_installed
 
 - name: Install homebrew-cask
-  shell: brew tap phinze/cask && brew install brew-cask
+  shell: brew tap caskroom/cask && brew install brew-cask
   when: brew_cask_installed.stat.exists == false
 
 - name: Check for installed casks
@@ -33,5 +33,5 @@
   with_items: applications
   when: "item not in installed_applications.results|map(attribute='stdout')"
 
-- name: Modify alfred scope to include caskroom
-  shell: brew cask alfred link --appdir={{ application_dir }} --caskroom={{ caskroom_dir }}
+#- name: Modify alfred scope to include caskroom
+#  shell: brew cask alfred link --appdir={{ application_dir }} --caskroom={{ caskroom_dir }}

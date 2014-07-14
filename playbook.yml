@@ -3,30 +3,18 @@
 
   vars:
     applications:
-      - alfred
-      - boxer
-      - cord
       - firefox
       - google-chrome
       - gpgtools
-      - handbrake
-      - hipchat
-      - kdiff3
-      - libreoffice
       - limechat
-      - phpstorm
-      - mou
-      - parallels
-      - robomongo
       - sequel-pro
       - sonos
-      - spotify
       - the-unarchiver
-      - transmit
       - tunnelblick
       - vagrant
       - virtualbox
-      - vlc
+      - atom
+      - coteditor
     application_dir: /Applications
     brews:
       - ack
@@ -36,15 +24,24 @@
       - ios-webkit-debug-proxy
       - rsync
       - zsh
+      - rbenv
+      - ruby-build
+      - nodebrew
+      - go
+      - jq
+      - tig
+      - tmux
+      - coreutils
+      - findutils
     caskroom_dir: /usr/local/caskroom
-    dotfiles_dir: /Users/craig/Code/dotfiles
-    email: EMAIL_HERE
-    github_username: craigmarvelley
-    home_dir: /Users/craig
-    name: Craig Marvelley
+#    dotfiles_dir: /Users/udzura/Code/dotfiles
+    email: udzura@pepabo.com
+    github_username: udzura
+    home_dir: /Users/udzura
+    name: Uchio KONDO
     zsh_path: /usr/local/bin/zsh
 
   tasks:
     - include: tasks/homebrew.yml tags=homebrew
     - include: tasks/zsh.yml tags=zsh
-    - include: tasks/dotfiles.yml tags=dotfiles
+    # - include: tasks/dotfiles.yml tags=dotfiles
