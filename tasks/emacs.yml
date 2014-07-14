@@ -1,0 +1,8 @@
+---
+- name: Check Emacs
+  stat: path=/usr/local/bin/emacs
+  register: emacs_installed
+
+- name: Install Emacs
+  shell: brew install emacs --cocoa --without-x
+  when: emacs_installed.stat.exists == false

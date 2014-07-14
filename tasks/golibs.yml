@@ -1,0 +1,4 @@
+---
+- name: Install Go Commands
+  shell: GOPATH=/Users/udzura/.go go get {{ item }}
+  with_items: go_applications

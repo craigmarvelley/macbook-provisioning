@@ -41,6 +41,9 @@
 #    dotfiles_dir: /Users/udzura/Code/dotfiles
     email: udzura@pepabo.com
     github_username: udzura
+    go_applications:
+      - github.com/motemen/ghq
+      - github.com/peco/peco/cmd/peco
     home_dir: /Users/udzura
     name: Uchio KONDO
     zsh_path: /usr/local/bin/zsh
@@ -48,4 +51,6 @@
   tasks:
     - include: tasks/homebrew.yml tags=homebrew
     - include: tasks/zsh.yml tags=zsh
+    - include: tasks/emacs.yml tags=emacs
+    - include: tasks/golibs.yml tags=golibs
     # - include: tasks/dotfiles.yml tags=dotfiles
