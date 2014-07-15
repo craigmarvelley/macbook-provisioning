@@ -23,10 +23,15 @@
       - ack
       - chromedriver
       - docker
+      - boot2docker
       - hub
       - ios-webkit-debug-proxy
       - rsync
       - zsh
+      - openssl
+      - libyaml
+      - readline
+      - nkf
       - rbenv
       - ruby-build
       - nodebrew
