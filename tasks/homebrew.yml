@@ -10,6 +10,9 @@
 - name: Tap homebrew/dupes
   shell: brew tap homebrew/dupes
 
+- name: Tap homebrew/versions
+  shell: brew tap homebrew/versions
+
 - name: Install Homebrew libraries
   homebrew: name={{ item }} state=present
   with_items: brews

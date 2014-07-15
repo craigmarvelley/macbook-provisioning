@@ -42,6 +42,9 @@
       - weechat
       - coreutils
       - findutils
+      - gcc
+      - mysql
+      - mysql51
     caskroom_dir: /usr/local/caskroom
 #    dotfiles_dir: /Users/udzura/Code/dotfiles
     email: '{{ email }}'
