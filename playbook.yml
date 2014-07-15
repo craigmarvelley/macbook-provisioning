@@ -39,13 +39,13 @@
       - findutils
     caskroom_dir: /usr/local/caskroom
 #    dotfiles_dir: /Users/udzura/Code/dotfiles
-    email: udzura@pepabo.com
-    github_username: udzura
+    email: '{{ email }}'
+    github_username: '{{ github_username }}'
     go_applications:
       - github.com/motemen/ghq
       - github.com/peco/peco/cmd/peco
-    home_dir: /Users/udzura
-    name: Uchio KONDO
+    home_dir: '{{ home }}'
+    name: '{{ name }}'
     zsh_path: /usr/local/bin/zsh
 
   tasks:
