@@ -10,5 +10,6 @@ See http://marvelley.com/blog/2014/04/11/local-provisioning-with-ansible/ for de
 ```bash
 $ sudo easy_install pip
 $ sudo pip install ansible
-$ ansible-playbook playbook.yml -i hosts -K
+$ cp .env.json{.sample,} # and edit it
+$ ansible-playbook playbook.yml -i hosts -K --extra-vars "@.env.json"
 ```
