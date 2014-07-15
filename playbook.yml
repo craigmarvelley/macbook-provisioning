@@ -53,4 +53,5 @@
     - include: tasks/zsh.yml tags=zsh
     - include: tasks/emacs.yml tags=emacs
     - include: tasks/golibs.yml tags=golibs
+    - include: tasks/defaults.yml tags=defaults
     # - include: tasks/dotfiles.yml tags=dotfiles
