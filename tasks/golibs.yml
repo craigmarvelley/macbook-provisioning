@@ -1,4 +1,12 @@
 ---
 - name: Install Go Commands
-  shell: GOPATH=/Users/udzura/.go go get {{ item }}
+  shell: GOPATH={{ home_dir }}/.go go get {{ item }}
   with_items: go_applications
+
+- name: Check Alias for pt
+  stat: path={{ home_dir }}/.go/bin/pt
+  register: pt_installed
+
+- name: Alias for pt
+  shell: ln -sf the_platinum_searcher {{ home_dir }}/.go/bin/pt
+  when: pt_installed.stat.exists == false
