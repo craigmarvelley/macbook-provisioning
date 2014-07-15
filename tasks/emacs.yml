@@ -8,5 +8,5 @@
   when: emacs_installed.stat.exists == false
 
 - name: Link Emacs
-  shell: ln -s /usr/local/Cellar/emacs/24.3/Emacs.app /Applications
+  shell: ln -s $( brew --prefix emacs )/Emacs.app /Applications
   when: emacs_installed.stat.exists == false
