@@ -18,6 +18,8 @@
       - skype
       - thunderbird
       - dropbox
+      - unity-web-player
+      - flash-player
     application_dir: /Applications
     brews:
       - ack
