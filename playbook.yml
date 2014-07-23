@@ -3,48 +3,66 @@
 
   vars:
     applications:
-      - alfred
-      - boxer
-      - cord
       - firefox
       - google-chrome
       - gpgtools
-      - handbrake
-      - hipchat
-      - kdiff3
-      - libreoffice
       - limechat
-      - phpstorm
-      - mou
-      - parallels
-      - robomongo
       - sequel-pro
-      - sonos
-      - spotify
       - the-unarchiver
-      - transmit
       - tunnelblick
       - vagrant
       - virtualbox
-      - vlc
+      - atom
+      - coteditor
+      - licecap
+      - skype
+      - thunderbird
+      - dropbox
+      - unity-web-player
+      - flash-player
     application_dir: /Applications
     brews:
       - ack
       - chromedriver
       - docker
+      - boot2docker
       - hub
       - ios-webkit-debug-proxy
       - rsync
       - zsh
+      - openssl
+      - libyaml
+      - readline
+      - nkf
+      - rbenv
+      - ruby-build
+      - nodebrew
+      - go
+      - jq
+      - tig
+      - tmux
+      - weechat
+      - coreutils
+      - findutils
+      - gcc
+      - mysql
+      - mysql51
     caskroom_dir: /usr/local/caskroom
-    dotfiles_dir: /Users/craig/Code/dotfiles
-    email: EMAIL_HERE
-    github_username: craigmarvelley
-    home_dir: /Users/craig
-    name: Craig Marvelley
+#    dotfiles_dir: /Users/udzura/Code/dotfiles
+    email: '{{ email }}'
+    github_username: '{{ github_username }}'
+    go_applications:
+      - github.com/motemen/ghq
+      - github.com/peco/peco/cmd/peco
+      - github.com/monochromegane/the_platinum_searcher/cmd/pt
+    home_dir: '{{ home }}'
+    name: '{{ name }}'
     zsh_path: /usr/local/bin/zsh
 
   tasks:
     - include: tasks/homebrew.yml tags=homebrew
     - include: tasks/zsh.yml tags=zsh
-    - include: tasks/dotfiles.yml tags=dotfiles
+    - include: tasks/emacs.yml tags=emacs
+    - include: tasks/golibs.yml tags=golibs
+    - include: tasks/defaults.yml tags=defaults
+    # - include: tasks/dotfiles.yml tags=dotfiles

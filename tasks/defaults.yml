@@ -1,0 +1,17 @@
+---
+- name: Check keyrepeat
+  shell: defaults read -g KeyRepeat -int
+  register: keyrepeat_exists
+  ignore_errors: True
+
+- name: Set keyrepeat
+  shell: defaults write -g KeyRepeat -int 1
+  when: keyrepeat_exists|failed
+
+- name: Set initial keyrepeat
+  shell: defaults write -g InitialKeyRepeat -int 15
+  when: keyrepeat_exists|failed
+
+- name: Debug info for defaults
+  debug: msg="This task requires reboot!"
+  when: keyrepeat_exists|failed
