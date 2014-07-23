@@ -8,11 +8,3 @@
   shell: GOPATH={{ home_dir }}/.go go get {{ item }}
   with_items: go_applications
   when: "item in go_cmd_installed.results|selectattr('stat.exists','sameas',false)|map(attribute='item')"
-
-- name: Check Alias for pt
-  stat: path={{ home_dir }}/.go/bin/pt
-  register: pt_installed
-
-- name: Alias for pt
-  shell: ln -sf the_platinum_searcher {{ home_dir }}/.go/bin/pt
-  when: pt_installed.stat.exists == false

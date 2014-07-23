@@ -54,7 +54,7 @@
     go_applications:
       - github.com/motemen/ghq
       - github.com/peco/peco/cmd/peco
-      - github.com/monochromegane/the_platinum_searcher
+      - github.com/monochromegane/the_platinum_searcher/cmd/pt
     home_dir: '{{ home }}'
     name: '{{ name }}'
     zsh_path: /usr/local/bin/zsh
